@@ -20,6 +20,8 @@
 
 ## Special Instructions for Installing Ditto in an Angular Application.
 
+_You don't have to do this in this example app, it's already setup. These are general instructions for angular apps_
+
 `@dittolive/ditto` was built with WebAssembly and requires the `ditto.wasm` file to be loaded into the browser. If you created your project with the angular CLI, you'll need a couple of modifications to your file:
 
 1. Install the ditto package using `npm install @dittolive/ditto` or `yarn add @dittolive/ditto`
