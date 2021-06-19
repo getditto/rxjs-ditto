@@ -2,7 +2,7 @@
 
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-This adds RxJS observables to Ditto. 
+A wrapper library for [RxJS](https://rxjs.dev/) and [Ditto](https://www.ditto.live). Great for [Angular apps](https://angular.io/)
 
 ## Quick Start
 
