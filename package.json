@@ -1,0 +1,43 @@
+{
+  "name": "@dittolive/rxjs-ditto",
+  "version": "0.1.2",
+  "description": "RxJS Wrapper for Ditto",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc",
+    "watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getditto/rxjs-ditto.git"
+  },
+  "keywords": [
+    "RxJS",
+    "Ditto",
+    "Sync"
+  ],
+  "author": "contact@ditto.live",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getditto/rxjs-ditto/issues"
+  },
+  "homepage": "https://github.com/getditto/rxjs-ditto#readme",
+  "devDependencies": {
+    "@dittolive/ditto": "^0.0.1-alpha.216",
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^15.12.2",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.0",
+    "rimraf": "^3.0.2",
+    "rxjs": "~6.6.0",
+    "typescript": "^4.3.2"
+  },
+  "peerDependencies": {
+    "@dittolive/ditto": "^0.0.1-alpha.216",
+    "rxjs": "~6.6.0"
+  }
+}
