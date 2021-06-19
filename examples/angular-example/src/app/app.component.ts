@@ -23,7 +23,7 @@ export class AppComponent {
   constructor(private dittoService: DittoService, private formBuilder: FormBuilder) {
     this.tasks$ = dittoService.rxDitto.store.collection('tasks')
       .findAll()
-      .toObservable()
+      .documents$
   }
   
   addTask() {

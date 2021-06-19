@@ -2,9 +2,52 @@
 
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-## Installation
+This adds RxJS observables to Ditto. 
 
-1. Run `npm install @dittolive/ditto @dittolive/rxjs-ditto` 
+## Quick Start
+
+This package requires `@dittolive/ditto` and `rxjs` (minium 6.0.0) as a peer dependency.
+
+1. Run `npm install rxjs @dittolive/ditto @dittolive/rxjs-ditto` 
+2. Construct an `RxDitto` instance like so and begin observing 
+
+```ts
+import { RxDitto } from "@dittolive/rxjs-ditto"
+
+const rxDitto = new RxDitto(yourExistingDittoInstance);
+
+let documents$ = rxDitto.store.collection("cars")
+  .find("color == 'red'")
+  .document$
+```
+
+Or observe a single document 
+
+```ts
+import { RxDitto, DocumentID } from "@dittolive/rxjs-ditto"
+
+const rxDitto = new RxDitto(yourExistingDittoInstance);
+
+let documents$: Observable<Document[]> = rxDitto.store.collection("cars")
+  .findByID(new Document("123abc"))
+  .document$
+```
+
+```ts
+import { RxDitto, DocumentID } from "@dittolive/rxjs-ditto"
+
+const rxDitto = new RxDitto(yourExistingDittoInstance);
+
+let document$ : Observable<Document | undefined>  = rxDitto.store.collection("cars")
+  .findByID(new Document("123abc"))
+  .document$
+```
+
+Observe peers like:
+
+```ts
+let peers$: Observable<RemotePeer[]> = rxDitto.peers$
+```
 
 ## Run Example Angular App
 
