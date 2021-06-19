@@ -4,11 +4,15 @@
   "description": "RxJS Wrapper for Ditto",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && tsc",
     "watch": "tsc --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,6 +20,7 @@
   },
   "keywords": [
     "RxJS",
+    "Rx",
     "Ditto",
     "Sync"
   ],
