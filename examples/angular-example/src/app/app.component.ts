@@ -28,22 +28,8 @@ export class AppComponent {
   ) {
     this.tasks$ = toObservable(
       dittoService.ditto.store.collection('tasks').findAll()
-    );
+    )
   }
-
-  // addTask() {
-  //   console.log(this.newTask.length);
-  //   this.dittoService.ditto.store.collection('tasks').insert({
-  //     value: {
-  //       isDone: false,
-  //       body:
-  //         this.newTask.trim().length == 0
-  //           ? faker.lorem.sentence()
-  //           : this.newTask,
-  //     },
-  //   });
-  //   this.newTask = '';
-  // }
 
   toggleTask(task: Document) {
     this.dittoService.ditto.store
