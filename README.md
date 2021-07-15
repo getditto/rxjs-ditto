@@ -9,46 +9,25 @@ A wrapper library for [RxJS](https://rxjs.dev/) and [Ditto](https://www.ditto.li
 This package requires `@dittolive/ditto` and `rxjs` (minium 6.0.0) as a peer dependency.
 
 1. Run `npm install rxjs @dittolive/ditto @dittolive/rxjs-ditto` 
-2. Construct an `RxDitto` instance like so and begin observing 
+2. Wrap your query into `toObservable` like so:
 
 ```ts
-import { RxDitto } from "@dittolive/rxjs-ditto"
+import { toObservable } from "@dittolive/rxjs-ditto"
 
-const rxDitto = new RxDitto(yourExistingDittoInstance);
+let documents$ = toObservable(ditto.store.collection("cars")
+  .find("color == 'red'"))
 
-let documents$ = rxDitto.store.collection("cars")
-  .find("color == 'red'")
-  .document$
 ```
 
 Or observe a single document 
 
 ```ts
-import { RxDitto, DocumentID } from "@dittolive/rxjs-ditto"
+import { toObservable } from "@dittolive/rxjs-ditto"
 
-const rxDitto = new RxDitto(yourExistingDittoInstance);
 
-let documents$: Observable<Document[]> = rxDitto.store.collection("cars")
-  .findByID(new Document("123abc"))
-  .document$
+let documents$: Observable<Document[]> = toObservable(rxDitto.store.collection("cars")
+  .findByID(new Document("123abc")))
 ```
-
-```ts
-import { RxDitto, DocumentID } from "@dittolive/rxjs-ditto"
-
-const rxDitto = new RxDitto(yourExistingDittoInstance);
-
-let document$ : Observable<Document | undefined>  = rxDitto.store.collection("cars")
-  .findByID(new Document("123abc"))
-  .document$
-```
-
-Observe peers like:
-
-```ts
-let peers$: Observable<RemotePeer[]> = rxDitto.peers$
-```
-
 ## Run Example Angular App
 
 1. In this directory run `yarn` or `npm install`
