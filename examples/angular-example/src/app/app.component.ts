@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { DittoService } from 'src/DittoService';
 import { Document } from '@dittolive/ditto';
 import { FormBuilder } from '@angular/forms';
-import { toObservable } from '../../../../dist';
+import { toObservable } from "@dittolive/rxjs-ditto";
 import * as faker from 'faker';
 
 @Component({
