@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/getditto/rxjs-ditto#readme",
   "devDependencies": {
-    "@dittolive/ditto": ">=0.0.1-alpha.334",
+    "@dittolive/ditto": "0.0.1-alpha.334",
     "@types/chai": "^4.2.18",
     "@types/mocha": "^8.2.2",
     "@types/node": "^15.12.2",
@@ -42,7 +42,7 @@
     "typescript": "^4.3.2"
   },
   "peerDependencies": {
-    "@dittolive/ditto": ">=0.0.1-alpha.334",
+    "@dittolive/ditto": "0.0.1-alpha.334",
     "rxjs": "~6.6.0"
   }
 }
